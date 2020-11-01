@@ -12,7 +12,8 @@ app.get('/thrissur', (req, res) => {
         if(!error && response.statusCode == 200){
             let parseBody = JSON.parse(body)
             let temp = parseBody["current"]["temperature"]
-            res.send({ temp })
+            let observationTime = parseBody["current"]["observation_time"]
+            res.send({ temp,observationTime })
         } 
     })
 })
